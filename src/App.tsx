@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Navbar from './components/Navbar';
 import ProductList from "./components/ProductList";
+import BagSideBar from "./components/ProductList";
 
 const products = [
   {
@@ -44,22 +45,42 @@ const products = [
 function App() {
 
   const [bagCount, setBagCount] = useState([])
+  const [isBagOpen, setIsBagOpen] = useState(false)
 
-  function handleAddToBag() {
-    setBagCount(bagCount + 1)
+  function handleAddToBag(product) {
+    setBagCount({...bagItems, product})
   }
 
-  function handleAddToBag(product) {0
-    setBagItems([...bagItems, product])
+  function handleRemoveFromBag(index) {
+    setBagItems(bagItems.filter((_, i) => i !== index))
   }
+
+  function handleOpenBag() {
+    setIsBagOpen(true)
+  }
+
+  function handleCloseBag() {
+    setIsbagOpen(false)
+  }
+
+
 
   return (
     <div>
-      <Navbar bagCount={bagCo}/>
+      <Navbar bagCount={bagCount.length}
+      onBagClick ={handleOpenBag}/>
       <main className="main-content">
         <h2 className="section-title">Nossos Produtos</h2>
         <ProductList products={products} onAddToBag={handleAddToBag} />
       </main>
+      {isCartOpen && (
+        <BagSideBar
+          bagItems={bagItems}
+          onRemove={handleRemoveFromBag}
+          onClose={handleCloseBag}
+        />
+      )}
+
     </div>
   );
 }
