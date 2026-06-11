@@ -43,10 +43,14 @@ const products = [
 
 function App() {
 
-  const [bagCount, setBagCount] = useState(0)
+  const [bagCount, setBagCount] = useState([])
 
   function handleAddToBag() {
     setBagCount(bagCount + 1)
+  }
+
+  function handleAddToBag(product) {0
+    setBagItems([...bagItems, product])
   }
 
   return (
@@ -54,9 +58,7 @@ function App() {
       <Navbar bagCount={bagCo}/>
       <main className="main-content">
         <h2 className="section-title">Nossos Produtos</h2>
-        <div className="product-grid">
         <ProductList products={products} onAddToBag={handleAddToBag} />
-        </div>
       </main>
     </div>
   );
