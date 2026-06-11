@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import Navbar from './components/Navbar';
 import ProductList from "./components/ProductList";
 
@@ -41,13 +42,20 @@ const products = [
 ];
 
 function App() {
+
+  const [bagCount, setBagCount] = useState(0)
+
+  function handleAddToBag() {
+    setBagCount(bagCount + 1)
+  }
+
   return (
     <div>
-      <Navbar/>
+      <Navbar bagCount={bagCo}/>
       <main className="main-content">
         <h2 className="section-title">Nossos Produtos</h2>
         <div className="product-grid">
-        <ProductList products={products}/>
+        <ProductList products={products} onAddToBag={handleAddToBag} />
         </div>
       </main>
     </div>

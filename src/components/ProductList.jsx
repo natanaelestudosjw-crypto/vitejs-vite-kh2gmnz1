@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-function ProductList({ products }) {
+function ProductList({ products, onAddToBag }) {
   return (
     <div className="product-grid">
       {products.map((product) => (
@@ -9,6 +9,7 @@ function ProductList({ products }) {
           name={product.name}
           price={product.price}
           image={product.image}
+          onAddToBag={onAddToBag}
         />
       ))}
     </div>
