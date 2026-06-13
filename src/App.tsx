@@ -3,6 +3,17 @@ import Navbar from './components/Navbar';
 import ProductList from "./components/ProductList";
 import BagSideBar from "./components/BagSideBar";
 
+
+function App() {
+
+  const [bagItems, setBagItems] = useState([])
+  const [isBagOpen, setIsBagOpen] = useState(false)
+
+  function handleAddToBag(product) {
+    setBagItems([...bagItems, product]);
+    console.log(bagItems)
+  }
+
 const products = [
   {
     id: 1,
@@ -24,47 +35,21 @@ const products = [
   },
 ];
 
-function App() {
-
-  const [bagItems, setBagItems] = useState([])
-  const [isBagOpen, setIsBagOpen] = useState(false)
-
-  function handleAddToBag(product) {
-    setBagItems([...bagItems, product])
-  }
-
-  function handleRemoveFromBag(index) {
-    setBagItems(bagItems.filter((_, i) => i !== index))
-  }
-
-  function handleOpenBag() {
-    setIsBagOpen(true)
-  }
-
-  function handleCloseBag() {
-    setIsBagOpen(false)
-  }
-
-
-
   return (
-    <div>
+    <>
       <Navbar
        bagItems={bagItems.length} 
        openBag ={setIsBagOpen}/>
       <main className="main-content">
         <h2 className="section-title">Nossos Produtos</h2>
-        <ProductList products={products} onAddToBag={handleAddToBag} />
-      </main>
+        <ProductList  onAddToBag={handleAddToBag} products={products} />
+      
       {isBagOpen && (
-        <BagSideBar
-          bagItems={bagItems}
-          onRemove={handleRemoveFromBag}
-          onClose={handleCloseBag}
+        <BagSideBar closeBag={setIsBagOpen} bagItems={bagItems}
         />
       )}
-
-    </div>
+      </main>
+    </>
   );
 }
 
