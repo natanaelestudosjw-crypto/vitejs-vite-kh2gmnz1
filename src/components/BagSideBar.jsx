@@ -2,8 +2,7 @@ function BagSideBar ({ bagItems, onRemove, onClose }) {
     const total = bagItems.reduce((soma, item) => {
         const preco = parseFloat(item.price.replace("," , ".") || 0)
         return soma + preco
-    }, 0)
-}
+    }, 0);
 
 return (
     <div className="bag-overlay">
@@ -40,5 +39,5 @@ return (
     </div>
   </div>
 )
-
+}
 export default BagSideBar;

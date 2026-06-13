@@ -6,39 +6,21 @@ import BagSideBar from "./components/BagSideBar";
 const products = [
   {
     id: 1,
-    name: "",
-    price: "",
-    image: "",
+    name: "Canabris Prensada - 1KG",
+    price: "R$ 2.000,00",
+    image: "https://images.tcdn.com.br/img/img_prod/918854/noticia_1744174271675a2151970fd.jpg",
   },
   {
     id: 2,
-    name: "",
-    price: "",
-    image: "",
+    name: "Pedra Graúda - 1/UN",
+    price: "R$ 5,00",
+    image: "https://www.mprs.mp.br/media/areas/imprensa/midias_noticias/crack.jpg",
   },
   {
     id: 3,
-    name: "",
-    price: "",
-    image: "",
-  },
-  {
-    id: 4,
-    name: "",
-    price: "",
-    image: "",
-  },
-  {
-    id: 5,
-    name: "",
-    price: "",
-    image: "",
-  },
-  {
-    id: 6,
-    name: "",
-    price: "",
-    image: "",
+    name: "Coca Rosa - Edição Premium /1GR",
+    price: "R$ 600,00",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0k1ClqDq4D8cxsn4aix_jN3xFMVAMCaYJHg&s",
   },
 ];
 
@@ -69,7 +51,7 @@ function App() {
     <div>
       <Navbar
        bagItems={bagItems.length} 
-       onBagClick ={handleOpenBag}/>
+       openBag ={setIsBagOpen}/>
       <main className="main-content">
         <h2 className="section-title">Nossos Produtos</h2>
         <ProductList products={products} onAddToBag={handleAddToBag} />

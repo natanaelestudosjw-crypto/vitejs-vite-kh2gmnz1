@@ -1,4 +1,4 @@
-function Navbar({bagCount, onBagClick}) {
+function Navbar(props) {
   return (
     <nav className="navbar">
       <span className="navbar-logo"> Biqueira Express </span>
