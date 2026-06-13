@@ -1,6 +1,6 @@
 function BagSideBar ({ bagItems, onRemove, onClose }) {
     const total = bagItems.reduce((soma, item) => {
-        const preco = parseFloat(item.price.replace("," , "."))
+        const preco = parseFloat(item.price.replace("," , ".") || 0)
         return soma + preco
     }, 0)
 }
@@ -10,7 +10,7 @@ return (
     <div className="bag-sidebar">
       <div className="bag-header">
         <h2>Seu Saquinho</h2>
-        <button className="bag-close" onClick={false}>✕</button>
+        <button className="bag-close" onClick={onClose}>✕</button>
       </div>
 
       {bagItems.length === 0 ? (
@@ -41,4 +41,4 @@ return (
   </div>
 )
 
-export default BagSidebar;
+export default BagSideBar;

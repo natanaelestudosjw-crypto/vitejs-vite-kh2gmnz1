@@ -44,11 +44,11 @@ const products = [
 
 function App() {
 
-  const [bagItems, setBagCount] = useState([])
+  const [bagItems, setBagItems] = useState([])
   const [isBagOpen, setIsBagOpen] = useState(false)
 
   function handleAddToBag(product) {
-    setBagCount([...bagItems, product])
+    setBagItems([...bagItems, product])
   }
 
   function handleRemoveFromBag(index) {
