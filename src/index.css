@@ -1,3 +1,7 @@
+/* =========================
+   RESET E TEMA GERAL
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,65 +9,187 @@
 }
 
 body {
-  font-family: sans-serif;
-  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0c0c0c;
+  color: #f0f0f0;
+  min-height: 100vh;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-  padding: 16px 32px;
+
+  padding: 18px 32px;
+
+  background: #111;
+
+  border-bottom: 3px solid #00ff66;
+
+  box-shadow: 0 3px 15px rgba(0, 255, 102, 0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .navbar-logo {
-  font-size: 20px;
+  font-size: 1.7rem;
   font-weight: bold;
-  color: rgb(255, 196, 0);
+
+  color: #00ff66;
+
+  letter-spacing: 1px;
+
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
 }
 
 .navbar-bag {
-  color: rgb(255, 196, 0);
+  color: #ffb347;
   cursor: pointer;
+
   font-weight: bold;
+
+  transition: all 0.25s ease;
 }
 
-/* CONTEÚDO */
+.navbar-bag:hover {
+  color: #00ff66;
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
 
 .main-content {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 24px;
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
+.section-title,
 .main-content h2 {
-  margin-bottom: 24px;
-  color: black;
+  text-align: center;
+
+  color: #ffb347;
+
+  margin-bottom: 20px;
+
+  font-size: 2rem;
 }
 
-/* PRODUTOS */
+/* =========================
+   HERO / BANNER
+========================= */
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    #111,
+    #1b1b1b
+  );
+
+  border-left: 6px solid #00ff66;
+
+  border-radius: 14px;
+
+  padding: 45px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 0 20px rgba(0,255,102,.12);
+}
+
+.hero h1 {
+  color: #00ff66;
+
+  font-size: 2.8rem;
+
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: #d9d9d9;
+
+  font-size: 1.15rem;
+}
+
+/* =========================
+   FRASE PROMOCIONAL
+========================= */
+
+.slogan {
+  text-align: center;
+
+  background: #141414;
+
+  color: #ffb347;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid #2a2a2a;
+
+  margin-bottom: 35px;
+
+  font-style: italic;
+
+  box-shadow:
+    0 0 12px rgba(255,179,71,.08);
+}
+
+/* =========================
+   PRODUTOS
+========================= */
 
 .product-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+
+  gap: 28px;
 }
 
+/* =========================
+   CARD
+========================= */
+
 .product-card {
-  width: 220px;
-  background: white;
-  border-radius: 8px;
+  width: 250px;
+
+  background: #1a1a1a;
+
+  border-radius: 14px;
+
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  border: 1px solid #2c2c2c;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 0 12px rgba(0,0,0,.4);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #00ff66;
+
+  box-shadow:
+    0 0 20px rgba(0,255,102,.25);
 }
 
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -72,75 +198,183 @@ body {
 }
 
 .product-info h2 {
-  font-size: 18px;
-  margin-bottom: 8px;
+  color: white;
+
+  font-size: 1rem;
+
+  margin-bottom: 10px;
+
+  min-height: 40px;
 }
 
 .product-price {
-  color: brown;
+  color: #ffb347;
+
+  font-size: 1.2rem;
+
   font-weight: bold;
-  margin-bottom: 12px;
+
+  margin-bottom: 14px;
 }
+
+/* =========================
+   BOTÃO
+========================= */
 
 .btn-add {
   width: 100%;
-  padding: 10px;
-  background: black;
-  color: white;
+
+  padding: 12px;
+
   border: none;
+
+  border-radius: 8px;
+
+  background: #ff7b00;
+
+  color: white;
+
+  font-weight: bold;
+
   cursor: pointer;
-  border-radius: 4px;
+
+  transition: all .25s ease;
 }
 
 .btn-add:hover {
-  background: #333;
+  background: #00ff66;
+  color: black;
 }
 
-/* SIDEBAR */
+.btn-add:active {
+  transform: scale(.96);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
 
 .bag-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1000;
+
+  background: rgba(0,0,0,.72);
+
   display: flex;
   justify-content: flex-end;
+
+  z-index: 1000;
 }
 
 .bag-sidebar {
-  width: 350px;
+  width: 380px;
   height: 100vh;
-  background: white;
+
+  background: #181818;
+
+  border-left: 4px solid #00ff66;
+
   padding: 24px;
+
   overflow-y: auto;
-  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+
+  box-shadow:
+    -8px 0 25px rgba(0,255,102,.12);
+
+  animation: slideIn .3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .bag-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+
+  margin-bottom: 20px;
 }
 
 .bag-header h2 {
-  color: black;
+  color: #00ff66;
 }
 
 .bag-close {
-  border: none;
   background: none;
-  font-size: 22px;
+  border: none;
+
+  color: #ff7b00;
+
+  font-size: 1.5rem;
+
   cursor: pointer;
+
+  transition: .2s;
+}
+
+.bag-close:hover {
+  color: white;
+}
+
+.bag-message {
+  color: #ffb347;
+
+  font-style: italic;
+
+  margin-bottom: 20px;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #333;
 }
 
 .bag-empty {
   text-align: center;
-  color: #555;
+
+  color: #999;
+
   margin-top: 30px;
 }
 
 .bag-sidebar p {
+  color: white;
+
   margin-bottom: 12px;
-  color: black;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #2d2d2d;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 25px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .bag-sidebar {
+    width: 100%;
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
 }

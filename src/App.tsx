@@ -6,6 +6,18 @@ import BagSideBar from "./components/BagSideBar";
 
 function App() {
 
+  const frases = [
+    "Produto mais procurado do bairro imaginário.",
+    "Qualidade questionavelmente aprovada.",
+    "Entrega mais rápida que promessa de político.",
+    "100% livre de garantias.",
+    "Aprovado pelo Instituto Nacional do Confia."
+  ];
+  const fraseDoDia =
+    frases[Math.floor(Math.random() * frases.length)];
+
+
+
   const [bagItems, setBagItems] = useState([])
   const [isBagOpen, setIsBagOpen] = useState(false)
 
@@ -42,6 +54,9 @@ const products = [
        openBag ={setIsBagOpen}/>
       <main className="main-content">
         <h2 className="section-title">Nossos Produtos</h2>
+        <p className="slogan">
+        {fraseDoDia}
+        </p>
         <ProductList  onAddToBag={handleAddToBag} products={products} />
       
       {isBagOpen && (
