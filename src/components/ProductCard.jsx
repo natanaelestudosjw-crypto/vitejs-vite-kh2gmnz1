@@ -5,7 +5,10 @@ function ProductCard ({name, price, image, id, onAddToBag}) {
       <img src={image} alt={name}/>
       <div className="product-info">
         <h2>{name}</h2>
-       <p className="product-price">{price}</p>
+       <p className="product-price">{price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  })}</p>
        <button className="btn-add" onClick={() => {onAddToBag({id, name, price, image});}}>
         Adicionar ao Saquinho</button>
       </div>
