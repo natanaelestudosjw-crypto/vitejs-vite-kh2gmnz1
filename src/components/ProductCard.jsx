@@ -5,7 +5,7 @@ function ProductCard ({name, price, image, id, onAddToBag}) {
       <img src={image} alt={name}/>
       <div className="product-info">
         <h2>{name}</h2>
-       <p className="product-price">{price.toLocaleString("pt-BR", {
+       <p className="product-price"> {price.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
   })}</p>

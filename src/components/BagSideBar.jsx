@@ -15,7 +15,7 @@ function BagSideBar({ bagItems, closeBag }) {
           }}>✕</button>
         </div>
         <p className="bag-message">
-          Estoque fiscalmente invisível.
+          Seus Brinquedos.
         </p>
         {bagItems.length == 0 ? (
           <p className="bag-empty">Nenhum item no Saquinho.</p>
