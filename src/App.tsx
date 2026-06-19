@@ -16,9 +16,9 @@ function App() {
   const products = [
     {
       id: 1,
-      name: "Canabris Prensada - 1KG",
-      price: 2000.01,
-      image: "https://images.tcdn.com.br/img/img_prod/918854/noticia_1744174271675a2151970fd.jpg",
+      name: "Bugatti Chiron Pur Sport - LEGO TECHNIC",
+      price: 441.98,
+      image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQAC-4ihlZtW-L1dVmuDA8me42M9mjGL7yo2JSPeDtx-sLtkHuDu4PwIu0oBruv5cmNfg9mBJev59RpCXK0KBGwmWlFHzu_mv3CGc9lx6B5tm6-15VFIB1whg",
     },
     {
       id: 2,
