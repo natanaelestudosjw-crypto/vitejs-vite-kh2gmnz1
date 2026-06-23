@@ -3,8 +3,8 @@ function Navbar(props) {
     <>
       <nav className="navbar">
         <span className="navbar-logo"> Lego Cars  </span>
-        <input type="text" onChange={(event) => {props.setBusca(event.target.value)}} />
-        
+        <input type="text" onChange={(event) => { props.setBusca(event.target.value) }} />
+
         <span className="navbar-bag" onClick={() => props.openBag(true)}>
           Saquinho ({props.bagItems}) </span>
       </nav>
