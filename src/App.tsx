@@ -81,6 +81,27 @@ function App() {
     setInputImage("")
   }
 
+  function salvarEdicao() {
+    if (!inputName.trim()) return;
+  
+    const atualizada = products.map((product) =>
+      product.id === editandoId
+        ? {
+            ...product,
+            name: inputName.trim(),
+            price: Number(inputPrice) || 0,
+            image: inputImage.trim(),
+          }
+        : product
+    );
+  
+    setProducts(atualizada);
+    setEditandoId(null); // volta ao modo cadastro
+    setInputName("");
+    setInputPrice("");
+    setInputImage("");
+  }
+
   return (
     <>
       <Navbar
