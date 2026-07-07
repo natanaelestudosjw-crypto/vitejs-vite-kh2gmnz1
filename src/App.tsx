@@ -112,8 +112,8 @@ function App() {
         <h2 className="section-title">Nossos Produtos</h2>
         <div>
           <input
-            type="text"
-            placeholder="Nome da tecnologia"
+            type="text" 
+            placeholder="Nome do produto"
             value={inputName}
             onChange={(e) => setInputName(e.target.value)}
           />

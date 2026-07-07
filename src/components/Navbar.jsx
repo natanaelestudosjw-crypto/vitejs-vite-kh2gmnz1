@@ -6,7 +6,7 @@ function Navbar(props) {
         <input type="text" onChange={(event) => { props.setBusca(event.target.value) }} />
 
         <span className="navbar-bag" onClick={() => props.openBag(true)}>
-          Saquinho ({props.bagItems}) </span>
+          Carrinho ({props.bagItems}) </span>
       </nav>
     </>
   );

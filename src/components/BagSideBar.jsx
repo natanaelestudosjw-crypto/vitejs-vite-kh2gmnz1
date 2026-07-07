@@ -9,7 +9,8 @@ function BagSideBar({ bagItems, closeBag }) {
       <div className="bag-sidebar">
         <div className="bag-header">
 
-          <h2>Seu Saquinho</h2>
+          <h2>Seu Carrinho</h2>
+
           <button className="bag-close" onClick={() => {
             closeBag(false);
           }}>✕</button>
@@ -18,7 +19,7 @@ function BagSideBar({ bagItems, closeBag }) {
           Seus Brinquedos.
         </p>
         {bagItems.length == 0 ? (
-          <p className="bag-empty">Nenhum item no Saquinho.</p>
+          <p className="bag-empty">Nenhum item no Carrinho.</p>
         ) : (
           bagItems.map((item, index) => (
             <p key={index}>
